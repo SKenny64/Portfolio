@@ -1,0 +1,69 @@
+{% extends "base.html.twig" %}
+{% block javascripts %}
+    <script>
+      tinymce.init({
+        selector: '#mytextarea',
+        plugins: 'image',
+         // without images__url set, Upload tab won't show up
+        images_upload_url: 'uploads.php',
+        // override default upload handler to simulate successful upload
+        images_upload_handler: image_upload_handler_callback
+      });
+    </script>
+{% endblock %}
+{% block nav %}
+  <nav class="navbar navbar-expand-lg bg-body-secondary mb-5">
+    <div class="container">
+      <a class="navbar-brand" href="home">
+        <img src="assets/imgs/logo_bleu.png" class="img-fluid" style="max-width: 150px;"></img>
+        Mode Admin
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav nav-underline">
+          <li class="nav-item">
+            <a class="nav-link fs-4 link-dark" href="home">Accueil</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fs-4 link-dark" href="notre_histoire_theatre_poitiers">Notre histoire</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fs-4 link-dark" href="nos_representations_theatre_festival">Nos représentations</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fs-4 link-dark" href="nous_rejoindre">Nous rejoindre</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fs-4 link-dark" href="contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+{% endblock %}
+{% block body %}
+<div class="container">
+  <a href="gestionHistoire" title="retour gestion histoire">Retour à la liste</a>
+  <h1>Ajout Contenu</h1>
+  <form method="post" action="createHistoire">
+    <div class="row">
+      <div class="col-sm-12 col-md-8">
+        <label for="titre" class="form-label">Titre* :</label>
+        <input type="text" name="titre" id="titre" class="form-control">
+      </div>
+      <div class="col-4">
+        <label for="date" class="form-label">Date de creation :</label>
+        <input type="date" name="date" id="date" class="form-control">
+      </div>
+    </div>
+    <label for="categorieId">Categorie</label>
+    <input type="hidden" name="categorieId" id="categorieId" value="{{ categories.getId }}">{{ categories.getLibelle }}</input>
+    <textarea id="mytextarea" name="mytextarea" class="form-control"></textarea>
+    <div class="d-grid gap-2 d-flex justify-content-end my-3">
+      <button type="submit" class="btn btn-home text-align-right">Envoyer</button>
+    </div>
+  </form>
+</div>
+{% endblock %}

@@ -1,0 +1,71 @@
+{% extends 'base.html.twig' %}
+{% block nav %}
+<nav class="navbar navbar-expand-lg bg-body-secondary mb-5">
+  <div class="container">
+    <a class="navbar-brand" href="home">
+      <img src="assets/imgs/logo_bleu.png" class="img-fluid" style="max-width: 150px;"></img>
+      Mode Admin
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav nav-underline">
+        <li class="nav-item">
+          <a class="nav-link fs-4 link-dark {% block home %}{% endblock %}" aria-current="page" href="home">Accueil</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link fs-4 link-dark {% block about %}{% endblock %}" href="notre_histoire_theatre_poitiers">Notre histoire</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link fs-4 link-dark {% block representation %}{% endblock %}" href="nos_representations_theatre_festival">Nos représentations</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link fs-4 link-dark  {% block join %}{% endblock %}" href="nous_rejoindre">Nous rejoindre</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link fs-4 link-dark  {% block contact %}{% endblock %}" href="contact">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+{% endblock %}
+{% block body %}
+<div class="container">
+  <h1>Mettre à jour le contenu</h1>
+  {% for page in pages %}
+  <form method="post" action="?route=update&id={{ page.getId() }}">
+    <div class="row">
+      <div class="col-sm-12 col-md-8">
+        <label for="titre"  class="form-label">Titre Contenu* :</label>
+        <input type="text" name="titre" id="titre" class="form-control" value="{{ page.getTitre }}">
+      </div>
+      <div class="col-4">
+        <label for="date" class="form-label">Date creation Contenu :</label>
+        <input type="dateTime" name="dateContenu" id="dateContenu" class="form-control" value="{{ page.dateContenu|date('Y-m-d H:i:s') }}">
+      </div>
+      <label for="categorieId" class="form-label">Categorie</label>
+      <input type="hidden" name="categorieId" id="categorieId" value="{{ page.categorie.id }}"  disabled>
+      <input type="text" name="categorie" id="categorie" class="form-control" value="{{ page.categorie.libelle}}"  disabled>
+      <textarea id="mytextarea" name="mytextarea" class="form-control">{{ page.getContenu }}</textarea>
+      <div class="d-grid gap-2 d-flex justify-content-end my-3">
+        <button type="submit"  class="btn btn-home text-align-right">Envoyer</button>
+      </div>
+    </div>
+  </form>
+  {% endfor %}
+</div>
+{% endblock %}
+{% block javascripts %}
+    <script>
+      tinymce.init({
+        selector: '#mytextarea',
+        plugins: 'image',
+        // without images__url set, Upload tab won't show up
+        images_upload_url: '../uploads.php',
+        // override default upload handler to simulate successful upload
+        images_upload_handler: image_upload_handler_callback
+      });
+    </script>
+{% endblock %}

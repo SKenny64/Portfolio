@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+{% block representation %}active{% endblock %}
+{% block title %}Nos représentations{% endblock %}
+{% block body %}
+    <main>
+       <div class="head-banner position-relative">
+            <img src="assets/imgs/bandeau_representation.png" class="w-100">
+            <div class="head-banner-content text-uppercase text-center position-absolute top-50 start-50 translate-middle">
+                <h1>“Venez vous voir en salles ou en festivals”</h1>
+            </div>
+        </div>
+        <div class="synopsis">
+            <div class="container">
+                <h2 class="text-uppercase">Prochaine représentation :<br>"Coup de théâtres" écrite par Sébastien AZZOPARDI et Sacha DANINO</h2>
+                <p><span style="font-weight: 700;">Synopsis :</span> Ulysse, roi d'Ithaque, est rentré au pays. Après des années de guerre et d'aventures, il
+                rêve d'une retraite anticipée. Seulement, le Sphinx lui annonce sa nouvelle mission. Il doit
+                retrouver un certain Pantalon, qui a volé l'objet le plus sacré des Grecs. Ce Pantalon habite un
+                autre monde. Un monde où l'on vit masqué et où l'on se donne des coups de bâton...
+                Un voyage au cœur de l'histoire du théâtre, de la tragédie grecque au musical de Broadway. La
+                tragédie la plus comique, la comédie la plus tragique !</p>
+            </div>
+        </div>
+        <div class="agenda" id="agenda">
+
+        </div>
+        <div class="container">
+            <section class="representation">
+                <h3 class="text-uppercase">En Salle</h3>
+                {% for texte in textes %}
+                <div class="card mb-5 p-5 rounded-5 bg-body-secondary">
+                    {{ texte.contenu|raw }}
+                    <div class="d-flex justify-content-end">
+                        <a href="contact&{{ texte.date|date('Y-m-d') }}#form-contact" class="btn rounded-pill" title="vers la réservation">Réserver ma place</a>
+                    </div>
+                </div>
+                {% endfor %} 
+            </section>
+            <section class="representation">
+                <h3>En Festival</h3>
+                <p>A venir</p>
+            </section>
+        </div>
+    </main>
+{% endblock %}

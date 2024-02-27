@@ -1,0 +1,116 @@
+{% extends 'base.html.twig' %}
+{% block contact %}active{% endblock %}
+{% block title %}Contact{% endblock %}
+{% block body %}
+    <div class="head-banner position-relative">
+        <img src="assets/imgs/bandeau_contact.png" class="w-100">
+        <div class="head-banner-content text-uppercase text-center position-absolute top-50 start-50 translate-middle">
+            <h1>On discute ?</h1>
+        </div>
+    </div>
+    <div class="container">
+        <div class="info-form">
+            <h2 class="text-uppercase">informations formulaire</h2>
+            <p>Pour toutes demandes de réservation, veuillez remplir le formulaire ci-dessous ou contactez le 06 25
+            83 08 33. Si vous souhaitez des renseignements supplémentaires, veuillez remplir le formulaire de
+            contact ou joindre les membres de l'association au 06 25 83 08 33 ou par mail
+            contact@chaisespliees.fr.</p>
+        </div>
+        <form enctype="multipart/form-data" action="prisedeco" method="post" class="row g-5 contact-form" id="form-contact">
+            <div class="col-12">
+                <select class="form-select form-select-lg  rounded-4 bg-body-secondary" name="sujet" id="sujet" onchange="gererSujet()">
+                    <option value="type-demande">Type de demande</option>
+                    <option value="renseignement">renseignement</option>
+                    <option value="precommande">Precommande</option>
+                </select>
+            </div>
+            <div id="precommande" style="display : none;">
+                <div class="col-12 input-group bg-body-secondary rounded-4 mb-5">
+                    <span class="input-group-text bg-body-secondary" id="basic-addon">Date de représentation</span>
+                    {% if date %}
+                        <input
+                            type="date"
+                            name="date"
+                            id="date"
+                            class="form-control rounded-end-4 bg-body-secondary"
+                            aria-describedby="basic-addon"
+                            value="{{date}}"
+                        required />
+                    {% else %}
+                        <input
+                            type="date"
+                            name="date"
+                            id="date"
+                            class="form-control rounded-end-4 bg-body-secondary"
+                            aria-describedby="basic-addon"
+                        required />
+                    {% endif %}
+                </div>
+                <div class="col-12">
+                    <input
+                        type="number"
+                        class="form-control rounded-4 bg-body-secondary"
+                        name="nbPlace"
+                        id="nbPlace"
+                        placeholder="Nombre de places"
+                        aria-describedby="HelpId"
+                    required />
+                </div>
+            </div>    
+            <div class="col-7">
+                <input
+                    type="text"
+                    name="nom"
+                    id=""
+                    class="form-control rounded-4 bg-body-secondary"
+                    placeholder="Nom"
+                    aria-describedby="helpId"
+                required />
+            </div>
+            <div class="col-5">
+                <input
+                    type="text"
+                    class="form-control rounded-4 bg-body-secondary"
+                    name="prenom"
+                    id=""
+                    placeholder="Prénom"
+                    aria-describedby="HelpId"
+                required />
+            </div>
+            <div class="col-12">
+                <input
+                    type="email"
+                    name="email"
+                    id=""
+                    class="form-control rounded-4 bg-body-secondary"
+                    placeholder="Adresse Mail"
+                    aria-describedby="helpId"
+                required />
+            </div>
+            <div class="col-12">
+                <input
+                    type="number"
+                    class="form-control rounded-4 bg-body-secondary"
+                    name="telephone"
+                    id="telephone"
+                    placeholder="Téléphone"
+                    aria-describedby="HelpId"
+                required />
+            </div>
+            <div class="col-12">
+                <textarea
+                    type="textarea"
+                    name="description1"
+                    id="message"
+                    class="form-control rounded-4 bg-body-secondary"
+                    placeholder="Message"
+                    aria-describedby="helpId"
+                required /></textarea>
+            </div>
+            <div class="col-12 d-flex justify-content-end">
+                <button type="submit" class="btn rounded-pill">Envoyer</button>
+            </div>
+        </form>
+    </div>
+    <script src="assets/scripts/inputshow.js"></script>
+{% endblock %}

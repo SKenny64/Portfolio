@@ -1,0 +1,81 @@
+{% extends "base.html.twig" %}
+{% block javascripts %}
+  <script>
+  tinymce.init({
+    selector: 'textarea',  // change this value according to your HTML
+    plugins: 'template image',
+    language: 'fr_FR',
+    images_upload_url: 'uploads.php',
+    images_upload_handler: image_upload_handler_callback,
+    template_selected_content_classes: 'selcontent selectedcontent',
+    templates: [
+      { 
+        title: 'Template pour le diapo page accueil', 
+        description: 'Template pour le diapo page accueil avec la mise en forme sur le site intégré', 
+        content: "<div class='carousel-item active'>Inserez image</div><div class='carousel-item'> Inserez image</div><div class='carousel-item'>Inserez image</div>" 
+      },
+      { 
+        title: 'Template pour les actualités', 
+        description: 'template pour les actualités avec la mise en forme sur le site intégré', 
+        content: "<div class='d-flex mb-3 flex-column border-bottom' style='width: 24rem;'><div class='flex-shrink-0'>Inserez image</div><div class='flex-grow-1 ms-3'><h3 class='text-primary text-uppercase'>Inserez titre</h3><div class='row'><div class='col-7'><p>Inserez paragraphe actu</p></div><div class='col-5'><a href='#' class='d-flex btn btn-info rounded-pill' title='vers le calendrier'>à découvrir ></a></div></div></div></div>" 
+      }
+    ]
+  });
+  </script>
+{% endblock %}
+{% block nav %}
+  <nav class="navbar navbar-expand-lg bg-body-secondary mb-5">
+    <div class="container">
+      <a class="navbar-brand" href="home">
+        <img src="assets/imgs/logo_bleu.png" class="img-fluid" style="max-width: 150px;"></img>
+        Mode Admin
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav nav-underline">
+          <li class="nav-item">
+            <a class="nav-link fs-4 link-dark" href="home">Accueil</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fs-4 link-dark" href="notre_histoire_theatre_poitiers">Notre histoire</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fs-4 link-dark" href="nos_representations_theatre_festival">Nos représentations</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fs-4 link-dark" href="nous_rejoindre">Nous rejoindre</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fs-4 link-dark" href="contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+{% endblock %}
+{% block body %}
+  <div class="container">
+  <a href="gestionAccueil" title="retour gestion accueil">Retour à la liste</a>
+  <h1>Ajout Contenu</h1>
+  <form method="post" action="createActu">
+    <div class="row">
+      <div class="col-sm-12 col-md-8">
+        <label for="titre" class="form-label">Titre* :</label>
+        <input type="text" name="titre" id="titre" class="form-control">
+      </div>
+      <div class="col-4">
+        <label for="date" class="form-label">Date de creation :</label>
+        <input type="date" name="date" id="date" class="form-control">
+      </div>
+    </div>
+    <label for="categorieId">Categorie</label>
+    <input type="hidden" name="categorieId" id="categorieId" value="{{ categories.getId }}">{{ categories.getLibelle }}</input>
+    <textarea id="mytextarea" name="mytextarea" class="form-control"></textarea>
+    <div class="d-grid gap-2 d-flex justify-content-end my-3">
+      <button type="submit" class="btn btn-home text-align-right">Envoyer</button>
+    </div>
+  </form>
+</div>
+{% endblock %}

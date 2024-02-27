@@ -1,0 +1,67 @@
+{% extends 'base.html.twig' %}
+{% block nav %}
+<nav class="navbar navbar-expand-lg bg-body-secondary mb-5">
+  <div class="container">
+    <a class="navbar-brand" href="home">
+      <img src="assets/imgs/logo_bleu.png" class="img-fluid" style="max-width: 150px;"></img>
+      Mode Admin
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav nav-underline">
+        <li class="nav-item">
+          <a class="nav-link fs-4 link-dark {% block home %}{% endblock %}" aria-current="page" href="home">Accueil</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link fs-4 link-dark {% block about %}{% endblock %}" href="notre_histoire_theatre_poitiers">Notre histoire</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link fs-4 link-dark {% block representation %}{% endblock %}" href="nos_representations_theatre_festival">Nos représentations</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link fs-4 link-dark  {% block join %}{% endblock %}" href="nous_rejoindre">Nous rejoindre</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link fs-4 link-dark  {% block contact %}{% endblock %}" href="contact">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+{% endblock %}
+{% block body %}
+    <div class="container">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="backOffice">Accueil</a></li>
+        {% if page.categorie.libelle == 'accueil' %}
+          <li class="breadcrumb-item"><a href="gestionAccueil">Liste</a></li>
+        {% elseif page.categorie.libelle == 'spectacle' %}
+          <li class="breadcrumb-item"><a href="gestionSpectacle">Liste</a></li>
+        {% elseif page.categorie.libelle == 'actualite' %}
+          <li class="breadcrumb-item"><a href="gestionActualite">Liste</a></li>
+        {% elseif page.categorie.libelle == 'rejoindre' %}
+          <li class="breadcrumb-item"><a href="gestionRejoindre">Liste</a></li>
+        {% elseif page.categorie.libelle == 'histoire' %}
+          <li class="breadcrumb-item"><a href="gestionHistoire">Liste</a></li>
+        {% endif %}
+        <li class="breadcrumb-item active" aria-current="page">Contenu</li>
+      </ol>
+    </nav>
+    <div class="row">
+        <div class="col">
+            <h2>{{ page.getTitre  }}</h2>
+            <p>Date de création : {{ page.dateContenu|date('d/m/Y ')}}</p>
+            <p>Catégorie : {{ page.categorie.libelle|capitalize }}</p> 
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <p>Contenu :</p>
+            <p>{{ page.getContenu()|raw }}</p>
+        </div>
+    </div>
+  </div>
+{% endblock %}

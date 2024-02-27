@@ -1,0 +1,71 @@
+{% extends "base.html.twig" %}
+{% block nav %}
+<nav class="navbar navbar-expand-lg bg-body-secondary mb-5">
+  <div class="container">
+    <a class="navbar-brand" href="home">
+      <img src="assets/imgs/logo_bleu.png" class="img-fluid" style="max-width: 150px;"></img>
+      Mode Admin
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav nav-underline">
+        <li class="nav-item">
+          <a class="nav-link fs-4 link-dark {% block home %}{% endblock %}" aria-current="page" href="home">Accueil</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link fs-4 link-dark {% block about %}{% endblock %}" href="notre_histoire_theatre_poitiers">Notre histoire</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link fs-4 link-dark {% block representation %}{% endblock %}" href="nos_representations_theatre_festival">Nos représentations</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link fs-4 link-dark  {% block join %}{% endblock %}" href="nous_rejoindre">Nous rejoindre</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link fs-4 link-dark  {% block contact %}{% endblock %}" href="contact">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+{% endblock %}
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <h2 class="text-uppercase">Accueil</h2>
+        </div>
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Titre contenu</th>
+                <th scope="col">Date creation Contenu</th>
+                <th scope="col">categorie</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for page in pages %}
+            <tr>
+                <td>{{ page.getTitre() }}</td>
+                <td>{{ page.getDateContenu()|date('d/m/Y') }}</td>
+                <td>{{ page.getCategorie().getLibelle() }}</td>
+                <td><a href='update&{{ page.getId() }}' title='' class="btn btn-warning">Modifier </a></td>
+                <td><a href='show&{{ page.getId() }}' title='' class="btn btn-info">Voir Contenu</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+     <div class="row mb-5 mt-5">
+        <div class="col-4">
+            <a href='createAccueil' title='' class="btn btn-success">Creer une nouveau contenu</a>
+        </div>
+        <div class="col-4 text-end">
+            <a href="backOffice" title="Vers l'accueil" class="btn btn-secondary">Retour accueil</a>
+        </div>
+    </div>
+    </div>
+</div>
+{% endblock %}

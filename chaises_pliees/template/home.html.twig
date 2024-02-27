@@ -1,0 +1,277 @@
+{% extends 'base.html.twig' %}
+{% block home %}active{% endblock %}
+{% block title %}Chaise pliées - accueil{% endblock %}
+{% block body %}
+    <main>
+        <div class="head-banner  position-relative">
+            <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    {% for caroussel in caroussels %}
+                        {% if loop.index == 1 %}
+                            {{caroussel.getContenu|raw}}
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+            <div class="head-banner-content position-absolute top-50 start-50 translate-middle">
+                <h1>Réservez vos places pour Coup de Théâtres : Notre nouvelle pièce burlesque qui vous transportera !</h1>
+                <a href="nos_representations_theatre_festival" title="vers page représentation" class="btn rounded-pill text-capitalize">à découvrir
+                </a>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row gx-5 history">
+                <div class="col-lg-6">
+                    <img src="assets/imgs/bandeau+accueil_histoire.png" class="w-100" alt="#">
+                </div>
+                <div class="col-lg-6">
+                    <div class="d-flex flex-column">
+                        <h2 class="text-uppercase">La troupe</h2>
+                        <p>La Compagnie des Chaises pliées est une association loi 1901 née aux alentours de Poitiers en 2001 à l'initiative du comédien et metteur en scène Sébastien NICOT. Bien que nous sommes amateurs, nous mettons un point d'honneur à vous partager des représentations de qualité et amusantes. N'hésitez plus et laissez vous subjuguer par nos mise en scènes et interprétations hautes en couleur et en rire le temps d'une soirée…</p>
+                        <a class="align-self-start btn btn-home rounded-pill w-50" href="notre_histoire_theatre_poitiers" title="vers notre histoire">Nous découvrir</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="valeur-bg bg-body-secondary">
+            <div class="container">
+                <div class="row valeurs-banner">
+                    <div class="col-12 col-md-6 col-lg-3 d-flex flex-column align-items-center">
+                        <img src="assets/imgs/lien_social.svg">
+                        <h3>Créer du lien social</h3>
+                        <p><a href="https://www.chaisespliees.fr/Notre-histoire-théatre-poitiers/">Notre compagnie</a> est faite de mixité culturelle et générationnelle riche et enrichissante</p>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3 d-flex flex-column align-items-center">
+                        <img src="assets/imgs/pro_amateur.svg">
+                        <h3>De l'amateur au professionnel</h3>
+                        <p>Nous sommes théâtrophiles amateurs qui respectons notre art et souhaitons vous le faire
+                        découvrir dans les meilleures conditions qu'il soit.
+                        </p>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3 d-flex flex-column align-items-center">
+                        <img src="assets/imgs/fierte_locale.svg">
+                        <h3>Fières de nos origines</h3>
+                        <p>Originaires du Poitou, nous sommes très attachés à notre région et veillons à nous
+                        produire dans vos salles. Pas besoin d'aller en ville pour assister à des représentations originales de
+                        qualité.
+                        </p>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3 d-flex flex-column align-items-center">
+                        <img src="assets/imgs/familiale.svg">
+                        <h3>La famille avant tout !</h3>
+                        <p>Nous sommes unis au sein de l'association, formant une véritable famille.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="discover-home">
+                <h2 class="text-uppercase">Découvrez nos prochains spectacles de théâtre autour de Poitiers, Chasseneuil-du-Poitou,
+            Châtellerault et au-delà.</h2>
+                <div class="d-grid gap-2 col-4 mx-auto">
+                    <a href="nos_representations_theatre_festival" class="btn rounded-pill" title="vers le calendrier">à découvrir</a>
+                </div>
+            </div>
+            <hr>
+            <div class="join-home">
+                <div class="row my-3">
+                    <div class="col-lg-7">
+                        <h2 class="text-uppercase">Rejoins la troupe</h2>
+                        <p>Rejoins la Compagnie des Chaises Pliées et exploite ton potentiel à sa juste valeur.
+                        Entraîne toi, répète avec nous dans une ambiance conviviale toute l'année. Partage ta passion pour le
+                        théâtre avec des amateurs de tous horizons comme toi !</p>
+                        <a class="align-self-start btn btn-home rounded-pill w-50" href="nous_rejoindre" title="vers notre histoire">En savoir plus
+                        </a>
+                    </div>
+                    <div class="col-lg-5 py-5">
+                        <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                {% for caroussel in caroussels %}
+                                    {% if loop.index != 1 %}
+                                        {{caroussel.getContenu|raw}}
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="actus">
+                <h2>Nos actualités !</h2>
+                {# <div id="carouselExample" class="carousel slide">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="news-home d-flex justify-content-between">
+                                <div class="d-flex pb-3 mx-2 flex-column border-bottom border-2" style="width: 24rem; border-color: #3853A0;">
+                                    <div class="flex-shrink-0">
+                                        <img src="assets/imgs/accueil_article1.png" class="img-fluid" alt="...">
+                                    </div>
+                                    <div class="flex-grow-1">
+                                        <h3 class="text-uppercase">Nouvelle pièce 2024</h3>
+                                        <div class="row flex-md-column flex-lg-row">
+                                            <div class="col-12 col-lg-7">
+                                                <p>Découvrez Coup de Théâtres, notre nouvelle pièce pour la saison 2024 des chaises pliées …</p>
+                                            </div>
+                                            <div class="col-12 col-lg-5">
+                                                <a href="#" class="d-flex btn btn-home rounded-pill justify-content-center" title="vers le calendrier">lire plus</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex pb-3 mx-2 flex-column border-bottom border-2" style="width: 24rem;">
+                                    <div class="flex-shrink-0">
+                                        <img src="assets/imgs/accueil_article2.png" class="img-fluid" alt="...">
+                                    </div>
+                                    <div class="flex-grow-1">
+                                        <h3 class="text-uppercase">Vaincre le Stress pour le jour J !</h3>
+                                        <div class="row flex-md-column flex-lg-row">
+                                            <div class="col-12 col-lg-7">
+                                                <p>:Les comédiens ont tous une faiblesse. Découvrez comment vaincre votre stress …</p>
+                                            </div>
+                                            <div class="col-12 col-lg-5">
+                                                <a href="#" class="d-flex btn btn-home rounded-pill justify-content-center" title="vers le calendrier">lire plus</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex pb-3 mx-2 flex-column border-bottom border-2" style="width: 24rem;">
+                                    <div class="flex-shrink-0">
+                                        <img src="assets/imgs/accueil_article3.png" class="img-fluid" alt="...">
+                                    </div>
+                                    <div class="flex-grow-1">
+                                        <h3 class="text-uppercase">Coup d'éclat dans la Nouvelle République !</h3>
+                                        <div class="row flex-md-column flex-lg-row">
+                                            <div class="col-12 col-lg-7">
+                                                <p>: Notre troupe amateur au cœur d'un article de la NR. Découvrez l'article de …</p>
+                                            </div>
+                                            <div class="col-12 col-lg-5">
+                                                <a href="#" class="d-flex btn btn-home rounded-pill justify-content-center" title="vers le calendrier">lire plus</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div> #}
+                <div class="splide">
+                    <div class="splide__track">
+                        <ul class="splide__list">
+                            <li class="splide__slide">
+                                <div class="news-home d-flex justify-content-center">
+                                    <div class="d-flex pb-3 mx-2 flex-column border-bottom border-2" style="width: 24rem; border-color: #3853A0;">
+                                        <div class="flex-shrink-0">
+                                            <img src="assets/imgs/accueil_article1.png" class="img-fluid" alt="...">
+                                        </div>
+                                        <div class="flex-grow-1">
+                                            <h3 class="text-uppercase">Nouvelle pièce 2024</h3>
+                                            <div class="row flex-md-column flex-lg-row">
+                                                <div class="col-12 col-lg-7">
+                                                    <p>Découvrez Coup de Théâtres, notre nouvelle pièce pour la saison 2024 des chaises pliées …</p>
+                                                </div>
+                                                <div class="col-12 col-lg-5">
+                                                    <a href="#" class="d-flex btn btn-home rounded-pill justify-content-center" title="vers le calendrier">lire plus</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="splide__slide">
+                                <div class="news-home d-flex justify-content-center">
+                                    <div class="d-flex pb-3 mx-2 flex-column border-bottom border-2" style="width: 24rem; border-color: #3853A0;">
+                                        <div class="flex-shrink-0">
+                                            <img src="assets/imgs/accueil_article1.png" class="img-fluid" alt="...">
+                                        </div>
+                                        <div class="flex-grow-1">
+                                            <h3 class="text-uppercase">Nouvelle pièce 2024</h3>
+                                            <div class="row flex-md-column flex-lg-row">
+                                                <div class="col-12 col-lg-7">
+                                                    <p>Découvrez Coup de Théâtres, notre nouvelle pièce pour la saison 2024 des chaises pliées …</p>
+                                                </div>
+                                                <div class="col-12 col-lg-5">
+                                                    <a href="#" class="d-flex btn btn-home rounded-pill justify-content-center" title="vers le calendrier">lire plus</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="splide__slide">
+                                <div class="news-home d-flex justify-content-center">
+                                    <div class="d-flex pb-3 mx-2 flex-column border-bottom border-2" style="width: 24rem; border-color: #3853A0;">
+                                        <div class="flex-shrink-0">
+                                            <img src="assets/imgs/accueil_article1.png" class="img-fluid" alt="...">
+                                        </div>
+                                        <div class="flex-grow-1">
+                                            <h3 class="text-uppercase">Nouvelle pièce 2024</h3>
+                                            <div class="row flex-md-column flex-lg-row">
+                                                <div class="col-12 col-lg-7">
+                                                    <p>Découvrez Coup de Théâtres, notre nouvelle pièce pour la saison 2024 des chaises pliées …</p>
+                                                </div>
+                                                <div class="col-12 col-lg-5">
+                                                    <a href="#" class="d-flex btn btn-home rounded-pill justify-content-center" title="vers le calendrier">lire plus</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="my-slider-progress">
+                        <div class="my-slider-progress-bar"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+{% endblock %}
+{% block javascripts %}
+<script src="node_modules/@splidejs/splide/dist/js/splide.min.js"></script>
+<script>
+    var splide = new Splide( '.splide', {
+        perPage: 3,
+        gap    : '2rem',
+        breakpoints: {
+            992: {
+            perPage: 2,
+            gap    : '.7rem',
+            },
+            768: {
+            perPage: 1,
+            gap    : '.7rem',
+            },
+        },
+    });
+splide.mount();
+</script>
+{% endblock %}
+
+

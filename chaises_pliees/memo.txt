@@ -1,0 +1,26 @@
+accueil : ?route=home
+qui nous sommes : ?route=apropos
+rejoindre : ?route=rejoindre
+representation : ?route=representation
+contact: ?route=contact
+connexion: ?route=connexion
+
+route back-office okaaaaay
+
+interface back-office : ?route=admin
+
+gestion contenu accueil: ?route=readAccueil
+gestion contenu actu: ?route=readActu
+gestion contenu spectacle: ?route=readSpectacle
+gestion contenu qui sommes nous: ?route=readApropos
+gestion contenu rejoindre: ?route=readRejoindre
+
+creation contenu accueil: ?route=createAccueil
+creation contenu actu: ?route=createActu
+creation contenu spectacle: ?route=createSpectacle
+creation contenu qui sommes nous: ?route=createApropos
+creation contenu rejoindre: ?route=createRejoindre
+
+Pour voir le contenu d'une page : ?route=show&id=
+Pour modifier un contenu d'une page : ?route=update&id=
+Pour supprimer un contenu d'une page : ?route=delete&id=

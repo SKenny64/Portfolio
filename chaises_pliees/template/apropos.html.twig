@@ -1,0 +1,75 @@
+{% extends 'base.html.twig' %}
+{% block about %}active{% endblock %}
+{% block title %}Notre histoire{% endblock %}
+{% block body %}
+    <main>
+        <div class="head-banner position-relative">
+            <img src="assets/imgs/bandeau+accueil_histoire.png" class="w-100">
+            <div class="head-banner-content text-uppercase text-center position-absolute top-50 start-50 translate-middle">
+                <h1>"nous sommes des amateurs proffesionnels de l'art vivant depuis 2001"</h1>
+            </div>
+        </div>
+        <div class='container'>
+            <div class="history-about">
+                <h2 class="text-uppercase">notre histoire</h2>
+                {% for texte in textes %}
+                    {% if loop.index == 1 %}
+                        <div class="row history-row">
+                            <div class="col-lg-6">
+                                <h3>{{ texte.titre }}</h3>
+                                {{ texte.contenu|raw }}
+                            </div>
+                            <div class="col-lg-6">
+                                <img src="assets/imgs/photo1_histoire.png" class="img-fluid" alt="#">
+                            </div>
+                        </div>
+                    {% else %}
+                        <div class="row my-3 flex-column flex-lg-row history-row">
+                            <div class="col-lg-6">
+                                <img src="assets/imgs/photo2_histoire.png" class="img-fluid" alt="#">
+                            </div>
+                            <div class="col-lg-6">
+                                <h3>{{ texte.titre }}</h3>
+                                {{ texte.contenu|raw }}
+                                <div class="d-grid">
+                                    <a href="nos_representations_theatre_festival" class="btn btn-history rounded-pill w-50" title="vers le calendrier">à découvrir</a>
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <hr>
+            <section>
+                <div class="row g-5 history-valeur">
+                    <div class="col-12 col-lg-6 d-flex flex-column align-items-center">
+                        <img src="assets/imgs/lien_social_jaune.svg">
+                        <h3>Créer du lien social</h3>
+                        <p><a href="nos_representations_theatre_festival">Notre compagnie</a> est faite de mixité culturelle et générationnelle riche et enrichissante</p>
+                    </div>
+                    <div class="col-12 col-lg-6 d-flex flex-column align-items-center">
+                        <img src="assets/imgs/pro_amateur_jaune.svg"></img>
+                        <h3>De l'amateur au professionnel</h3>
+                        <p>Nous sommes théâtrophiles amateurs qui respectons notre art et souhaitons vous le faire
+                        découvrir dans les meilleures conditions qu'il soit.
+                        </p>
+                    </div>
+                    <div class="col-12 col-lg-6 d-flex flex-column align-items-center">
+                        <img src="assets/imgs/fierte_locale_jaune.svg">
+                        <h3>Fières de nos origines</h3>
+                        <p>Originaires du Poitou, nous sommes très attachés à notre région et veillons à nous
+                        produire dans vos salles. Pas besoin d'aller en ville pour assister à des représentations originales de
+                        qualité.
+                        </p>
+                    </div>
+                    <div class="col-12 col-lg-6 d-flex flex-column align-items-center">
+                        <img src="assets/imgs/familiale_jaune.svg">
+                        <h3>La famille avant tout !</h3>
+                        <p>Nous sommes unis au sein de l'association, formant une véritable famille.
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+{% endblock %}

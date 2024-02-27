@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}{% endblock %}</title>
+        <link rel="icon" href="assets/imgs/favicon.ico">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <link href="assets/styles/style.css" rel="stylesheet">
+        <link href="assets/houschka_pro/stylesheet.css" rel="stylesheet">
+        <link href="node_modules/@splidejs/splide/dist/css/splide.min.css" rel="stylesheet">
+    </head>
+    <body>
+    {% block nav %}
+      <div class="container">
+        <nav class="navbar navbar-expand-lg bg-body mb-5">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="home">
+              <img src="assets/imgs/logo_bleu.png" class="img-fluid" style="max-width: 250px;"></img>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav nav-underline">
+                <li class="nav-item">
+                  <a class="nav-link fs-4 link-dark {% block home %}{% endblock %}" aria-current="page" href="home">Accueil</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link fs-4 link-dark {% block about %}{% endblock %}" href="notre_histoire_theatre_poitiers">Notre histoire</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link fs-4 link-dark {% block representation %}{% endblock %}" href="nos_representations_theatre_festival">Nos représentations</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link fs-4 link-dark  {% block join %}{% endblock %}" href="nous_rejoindre">Nous rejoindre</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link fs-4 link-dark  {% block contact %}{% endblock %}" href="contact">Contact</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    {% endblock %}
+    {% block body %}
+    {% endblock %}
+     <footer class="bg-body-secondary">
+      <div class="container">
+        <h2 class="text-uppercase">la compagnies<br>des chaises pliées</h2>
+        <div class="row justify-content-between">
+          <div class="col-4">
+            <h3 class="text-uppercase">contact</h3>
+            <ul class="contact-footer">
+              <li><p>
+                <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 512 512"><path fill="none" stroke="#5437be" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M256 48c-79.5 0-144 61.39-144 137c0 87 96 224.87 131.25 272.49a15.77 15.77 0 0 0 25.5 0C304 409.89 400 272.07 400 185c0-75.61-64.5-137-144-137"/><circle cx="256" cy="192" r="48" fill="none" stroke="#5437be" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/></svg>
+                17, rue du Pont<br>86210 VOUNEUIL-SUR-VIENNE</p>
+              </li>
+              <li><p>
+                <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 20 20"><g fill="#5437be" fill-rule="evenodd" clip-rule="evenodd"><path d="M17 3.5H3a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-11a1 1 0 0 0-1-1m-13 11v-9h12v9z"/><path d="m17.648 5.261l-7.045 6a1 1 0 0 1-1.301-.004l-6.955-6C1.645 4.652 2.073 3.5 3 3.5h14c.93 0 1.356 1.158.648 1.761M5.69 5.5l4.27 3.683L14.282 5.5z"/></g></svg>
+                mail</p>
+              </li>
+              <li><p>
+                <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 256 256"><path fill="#5437be" d="m222.37 158.46l-47.11-21.11l-.13-.06a16 16 0 0 0-15.17 1.4a8.12 8.12 0 0 0-.75.56L134.87 160c-15.42-7.49-31.34-23.29-38.83-38.51l20.78-24.71c.2-.25.39-.5.57-.77a16 16 0 0 0 1.32-15.06v-.12L97.54 33.64a16 16 0 0 0-16.62-9.52A56.26 56.26 0 0 0 32 80c0 79.4 64.6 144 144 144a56.26 56.26 0 0 0 55.88-48.92a16 16 0 0 0-9.51-16.62M176 208A128.14 128.14 0 0 1 48 80a40.2 40.2 0 0 1 34.87-40a.61.61 0 0 0 0 .12l21 47l-20.67 24.74a6.13 6.13 0 0 0-.57.77a16 16 0 0 0-1 15.7c9.06 18.53 27.73 37.06 46.46 46.11a16 16 0 0 0 15.75-1.14a8.44 8.44 0 0 0 .74-.56L168.89 152l47 21.05h.11A40.21 40.21 0 0 1 176 208"/></svg>
+                06 25 83 08 33</p>
+              </li>
+            </ul>
+          </div>
+          <div class="col-4 text-end">
+            <h3 class="text-uppercase">suivez-nous</h3>
+            <ul class="nav justify-content-end">
+              <li class="nav-item">
+                <a class="nav-link" href="https://www.youtube.com/@CompagniedesChaisesPliees">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 24 24"><path fill="#5437be" d="m14.792 10.775l-3.668-2.112A1.417 1.417 0 0 0 9 9.89v4.222c-.003.506.267.974.706 1.224a1.41 1.41 0 0 0 1.419.002l3.667-2.112a1.413 1.413 0 0 0 0-2.45m-.5 1.582l-3.666 2.113a.414.414 0 0 1-.419 0A.408.408 0 0 1 10 14.11V9.89a.408.408 0 0 1 .207-.359a.402.402 0 0 1 .418 0l3.667 2.113a.41.41 0 0 1 0 .714M19 4H5a3.003 3.003 0 0 0-3 3v10a3.003 3.003 0 0 0 3 3h14a3.003 3.003 0 0 0 3-3V7a3.003 3.003 0 0 0-3-3m2 13a2.003 2.003 0 0 1-2 2H5a2.003 2.003 0 0 1-2-2V7a2.003 2.003 0 0 1 2-2h14a2.003 2.003 0 0 1 2 2z"/></svg>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="https://www.facebook.com/chaisespliees">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 24 24"><path fill="#5437be" d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-.326-.043-1.557-.14-2.857-.14C11.928 2 10 3.657 10 6.7v2.8H7v4h3V22h4z"/></svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <ul class="nav nav-fill mt-5">
+            <li class="nav-item">
+              <a class="nav-link fs-4 link-dark active" href="?route=index">Mentions Légales</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fs-4 link-dark" href="?route=about">C.G.U</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fs-4 link-dark" href="#">Politique de Confidentialité</a>
+            </li>
+          </ul>
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    <script src="https://cdn.tiny.cloud/1/iamu9noniaulh4ciprnxvm1268k8n5bejn340mu222o305ao/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+    <script src="assets/scripts/upload.js"></script>
+    <script>
+      function gererSujet() {
+        Sujet = document.getElementById('sujet');
+        console.log(Sujet);
+        typeSujet = Sujet.value;
+
+        if (typeSujet === 'precommande') {
+            document.getElementById(`precommande`).style.display = 'block';
+            ;
+        } else {
+            document.getElementById(`precommande`).style.display = 'none';
+        }
+      }
+    </script>
+    {% block javascripts %}
+    {% endblock %}
+    </body>
+</html>

@@ -1,0 +1,27 @@
+RewriteEngine On
+
+
+
+RewriteRule ^backOffice$ ?route=admin
+RewriteRule ^gestionActu$ ?route=readActu
+RewriteRule ^gestionSpectacle$ ?route=readSpectacle
+RewriteRule ^gestionHistoire$ ?route=readApropos
+RewriteRule ^gestionRejoindre$ ?route=readRejoindre
+RewriteRule ^gestionAccueil$ ?route=readAccueil
+RewriteRule ^createAccueil$ ?route=createAccueil
+RewriteRule ^createActu$ ?route=createActu
+RewriteRule ^createSpectacle$ ?route=createSpectacle
+RewriteRule ^createHistoire$ ?route=createApropos
+RewriteRule ^createRejoindre$ ?route=createRejoindre
+RewriteRule ^show&([0-9]+)$ ?route=show&id=$1
+RewriteRule ^update&([0-9]+)$ ?route=update&id=$1
+RewriteRule ^delete/([0-9]+)$ ?route=delete&id=$1
+RewriteRule ^contact$ ?route=contact
+RewriteRule ^nos_representations_theatre_festival$ ?route=representation
+RewriteRule ^notre_histoire_theatre_poitiers$ ?route=apropos
+RewriteRule ^nous_rejoindre$ ?route=rejoindre
+RewriteRule ^home$ ?route=home
+RewriteRule ^connexion$ ?route=connexion
+RewriteRule ^contact&([0-9]+)-([0-9]+)-([0-9]+)$  ?route=precommande&date=$1-$2-$3
+RewriteRule ^prisedeco$ ?route=prisedeco
+# RewriteRule ^$

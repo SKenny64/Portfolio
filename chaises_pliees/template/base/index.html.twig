@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+{% block nav %}
+  <nav class="navbar navbar-expand-lg bg-body-secondary mb-5">
+    <div class="container">
+      <a class="navbar-brand" href="home">
+        <img src="assets/imgs/logo_bleu.png" class="img-fluid" style="max-width: 150px;"></img>
+        Mode Admin
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav nav-underline">
+          <li class="nav-item">
+            <a class="nav-link fs-4 link-dark" href="home">Accueil</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fs-4 link-dark" href="notre_histoire_theatre_poitiers">Notre histoire</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fs-4 link-dark" href="nos_representations_theatre_festival">Nos représentations</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fs-4 link-dark" href="nous_rejoindre">Nous rejoindre</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fs-4 link-dark" href="contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+{% endblock %}
+{% block body %}
+<main class="mb-5">
+    <div class="container">
+        <h1 class="text-uppercase">bienvenue sur la page administrateur</h1>
+        <div class="row my-5">
+            <div class="col-12 d-flex align-items-center justify-content-center">
+                <h2> Choix de la page à administer</h2>
+            </div>
+            <div class="col-lg-2 mt-5 d-flex mx-auto justify-content-center">
+                <a href='gestionAccueil' title='' class="btn btn-home">Accueil</a>
+            </div>
+            <div class="col-lg-2 mt-5 d-flex mx-auto justify-content-center">
+                <a href='gestionHistoire' title='' class="btn btn-history">Notre histoire</a>
+            </div>
+            <div class="col-lg-2 mt-5 d-flex mx-auto justify-content-center">
+                <a href='gestionRejoindre' title='' class="btn btn-join">Nous rejoindre</a>
+            </div>
+            <div class="col-lg-2 mt-5 d-flex mx-auto justify-content-center">
+                <a href='gestionSpectacle' title='' class="btn btn-spectacle">Spectacles</a>
+            </div>
+            <div class="col-lg-2 mt-5 d-flex mx-auto justify-content-center">
+                <a href='gestionActu' title='' class="btn btn-home">Actualités</a>
+            </div>
+        </div>
+        <div class="d-grid d-flex">
+            <a href="home" title="Vers l'accueil" class="btn btn-info">Retour accueil</a>
+        </div>
+    </div>
+</main>
+{% endblock %}

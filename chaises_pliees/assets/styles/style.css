@@ -1,0 +1,398 @@
+* {
+  font-family: "Houschka pro";
+}
+
+.contact-footer {
+  padding-inline-start: 0px;
+}
+.contact-footer li {
+  list-style: none;
+}
+.contact-footer img {
+  margin-right: 10px;
+}
+
+.head-banner {
+  margin-bottom: 10rem;
+  background-color: black;
+}
+.head-banner img {
+  opacity: 0.5;
+}
+
+.head-banner-content {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 80%;
+}
+.head-banner-content h1 {
+  font-size: 82px;
+  color: white;
+  text-align: center;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+.head-banner-content .btn {
+  font-size: 42px;
+  background-color: #3853A0;
+  width: 30%;
+  color: white;
+}
+
+.valeurs-banner {
+  margin-bottom: 10rem;
+}
+.valeurs-banner img {
+  width: 200px;
+  height: 200px;
+}
+.valeurs-banner h3 {
+  text-transform: uppercase;
+  text-align: center;
+  color: #3853A0;
+  font-weight: 700;
+}
+.valeurs-banner p {
+  font-size: 18px;
+  text-align: center;
+}
+.valeurs-banner a {
+  text-decoration: none;
+}
+
+hr {
+  width: 60%;
+  border: 2px solid black;
+  margin: 0 auto;
+  opacity: 1;
+  margin-bottom: 10rem;
+}
+
+.btn-home {
+  background-color: #3853A0;
+  color: white;
+}
+
+.btn-history {
+  background-color: #E99652;
+  color: white;
+}
+
+.btn-spectacle {
+  background-color: #E2666A;
+  color: white;
+}
+
+.btn-join {
+  background-color: #FBB922;
+  color: white;
+}
+
+.discover-home {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 10rem;
+}
+.discover-home h2 {
+  font-size: 64px;
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 4rem;
+  color: #3853A0;
+}
+.discover-home a {
+  font-size: 52px;
+}
+.discover-home .btn {
+  background-color: #3853A0;
+  color: white;
+}
+
+.join-home {
+  margin-bottom: 10rem;
+}
+.join-home h2 {
+  font-size: 64px;
+  font-weight: 700;
+  margin-bottom: 3rem;
+  color: #3853A0;
+}
+.join-home p {
+  font-size: 32px;
+}
+.join-home a {
+  font-size: 32px;
+}
+
+.news-home {
+  margin-bottom: 10rem;
+}
+.news-home h3 {
+  margin-bottom: 1rem;
+  color: #3853A0;
+}
+
+.home-carousel {
+  margin-bottom: 10rem;
+}
+
+.history {
+  margin-bottom: 10rem;
+}
+.history h2 {
+  font-size: 64px;
+  font-weight: 700;
+  margin-bottom: 3rem;
+  color: #3853A0;
+}
+.history p {
+  font-size: 32px;
+  margin-bottom: 3rem;
+}
+.history a {
+  font-size: 32px;
+}
+
+.history-about {
+  margin-bottom: 10rem;
+}
+.history-about h2 {
+  font-size: 64px;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #E99652;
+}
+.history-about h3 {
+  font-size: 48px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  color: #E99652;
+}
+.history-about p {
+  font-size: 32px;
+  margin-bottom: 3rem;
+}
+.history-about a {
+  font-size: 32px;
+}
+
+.history-valeur {
+  margin-bottom: 10rem;
+}
+.history-valeur img {
+  width: 400px;
+  height: 400px;
+}
+.history-valeur h3 {
+  text-transform: uppercase;
+  text-align: center;
+  color: #E99652;
+  font-size: 64px;
+  font-weight: 700;
+}
+.history-valeur p {
+  font-size: 24px;
+  text-align: center;
+  font-weight: 600;
+}
+.history-valeur a {
+  text-decoration: none;
+}
+
+.history-row {
+  margin-bottom: 10rem;
+}
+
+.rythme {
+  margin-bottom: 10rem;
+}
+.rythme h2 {
+  font-size: 64px;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #FBB922;
+}
+.rythme p {
+  font-size: 32px;
+}
+
+.planning h2 {
+  font-size: 64px;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: #FBB922;
+}
+
+.planning-banner {
+  margin-bottom: 10rem;
+}
+.planning-banner img {
+  width: 200px;
+  height: 200px;
+}
+.planning-banner h3 {
+  text-transform: uppercase;
+  text-align: center;
+  color: #FBB922;
+  font-weight: 700;
+}
+.planning-banner p {
+  font-size: 18px;
+  text-align: center;
+}
+
+.adhesion {
+  margin-bottom: 10rem;
+}
+.adhesion h2 {
+  font-size: 64px;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #FBB922;
+}
+.adhesion p {
+  font-size: 32px;
+}
+
+.adhesion-form {
+  margin-bottom: 10rem;
+}
+.adhesion-form h2 {
+  font-size: 64px;
+  font-weight: 700;
+  margin-bottom: 4rem;
+  color: #FBB922;
+}
+.adhesion-form input {
+  height: 5rem !important;
+  font-size: 32px !important;
+}
+.adhesion-form textarea {
+  font-size: 32px !important;
+}
+.adhesion-form .btn {
+  background-color: #FBB922;
+  font-size: 32px;
+  max-width: 100%;
+  color: white;
+}
+
+.contact-form {
+  margin-bottom: 10rem;
+}
+.contact-form h2 {
+  font-size: 64px;
+  font-weight: 700;
+  margin-bottom: 4rem;
+}
+.contact-form input {
+  height: 5rem !important;
+  font-size: 32px !important;
+}
+.contact-form select {
+  height: 5rem !important;
+  font-size: 32px !important;
+}
+.contact-form textarea {
+  font-size: 32px !important;
+}
+.contact-form .input-group-text {
+  font-size: 32px !important;
+}
+.contact-form .btn {
+  background-color: #7CAE2C;
+  font-size: 32px !important;
+  color: white;
+}
+
+.info-form {
+  margin-bottom: 10rem;
+}
+.info-form h2 {
+  font-size: 64px;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: #7CAE2C;
+}
+.info-form p {
+  font-size: 32px;
+}
+
+.connect-form {
+  margin-bottom: 10rem;
+}
+
+.synopsis {
+  margin-bottom: 10rem;
+}
+.synopsis h2 {
+  font-size: 64px;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: #E2666A;
+}
+.synopsis p {
+  font-size: 32px;
+}
+
+.representation {
+  margin-bottom: 10rem;
+}
+.representation h3 {
+  font-size: 64px;
+  color: #E2666A;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.representation h4 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #E2666A;
+}
+.representation h5 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 3rem;
+  color: #E2666A;
+}
+.representation p {
+  font-size: 18px;
+  letter-spacing: 3px;
+  font-weight: 700;
+}
+.representation .btn {
+  background-color: #E2666A;
+  color: white;
+}
+
+footer {
+  font-size: 24px;
+  padding-top: 3rem;
+}
+footer h2 {
+  font-size: 64px;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: #3853A0;
+}
+footer h3 {
+  font-weight: 700;
+  font-size: 36px;
+}
+footer a {
+  color: black;
+}
+
+.actus {
+  margin-bottom: 10rem;
+}
+.actus h2 {
+  font-size: 64px;
+  font-weight: 700;
+  margin-bottom: 3rem;
+  color: #3853A0;
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,97 @@
+{% extends 'base.html.twig' %}
+{% block join %}active{% endblock %}
+{% block title %}Nous rejoindre{% endblock %}
+{% block body %}
+    <main>
+        <div class="head-banner position-relative">
+            <img src="assets/imgs/bandeau_rejoindre.png" class="w-100">
+            <div class="head-banner-content text-uppercase text-center position-absolute top-50 start-50 translate-middle">
+                <h1>Envie de participer ? Rejoignez-nous</h1>
+            </div>
+        </div>
+        <div class='container'>
+            <div class="rythme">
+                <div class="row my-3 flex-column-reverse flex-lg-row history-row">
+                    <div class="col-lg-6">
+                        <img src="assets/imgs/bandeau_representation.png" class="img-fluid" alt="#">
+                    </div>
+                    <div class="col-lg-6">
+                    {% for texte in textes %}
+                        {% if loop.index == 1 %}
+                            <h2 class="text-uppercase">{{ texte.titre }}</h2>
+                            {{ texte.contenu|raw }}
+                        {% endif %}
+                    {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <div class="planning">
+                <h2 class="text-uppercase">planning</h2>
+            </div>
+        </div>
+        <div class="planning-banner bg-body-secondary">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 col-sm-4 col-lg-4 d-flex flex-column align-items-center">
+                    <img src="assets/imgs/atelier.svg" class="img-fluid" alt="#">
+                        <div>
+                            <h3>Septembre - octobre</h3>
+                            <p>Atelier découverte et perfectionnement jeu, corps et voix</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-lg-4 d-flex flex-column align-items-center">
+                    <img src="assets/imgs/repetition.svg" class="img-fluid" alt="#">
+                        <div>
+                            <h3>Novembre - Mars</h3>
+                            <p>Répétition du spectacle</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-lg-4 d-flex flex-column align-items-center">
+                    <img src="assets/imgs/representation.svg" class="img-fluid" alt="#">
+                        <div>
+                            <h3>Mars - Avril - Mai</h3>
+                            <p>Représentation</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="adhesion">
+                {% for texte in textes %}
+                        {% if loop.index != 1 %}
+                            <h2 class="text-uppercase">{{ texte.titre }}</h2>
+                            {{ texte.contenu|raw }}
+                        {% endif %}
+                    {% endfor %}
+            </div>
+            <hr>
+            <div class="adhesion-form">
+                <h2 class="text-uppercase">demande d'adhésion</h2>
+                <form class="row g-5">
+                    <div class="col-md-6">
+                        <input type="text" class="form-control rounded-4 bg-body-secondary" id="nom" placeholder="Nom">
+                    </div>
+                    <div class="col-md-6">
+                        <input type="text" class="form-control rounded-4 bg-body-secondary" id="prenom" placeholder="Prenom">
+                    </div>
+                    <div class="col-4 col-md-2">
+                        <input type="number" class="form-control rounded-4 bg-body-secondary" id="age" placeholder="Âge">
+                    </div>
+                    <div class="col-8 col-md-10">
+                        <input type="text" class="form-control rounded-4 bg-body-secondary" id="tel" placeholder="Téléphone">
+                    </div>
+                    <div class="col-12">
+                        <input type="mail" class="form-control rounded-4 bg-body-secondary" id="mail" placeholder="Adresse mail">
+                    </div>
+                    <div class="col-12">
+                        <textarea class="form-control rounded-4 bg-body-secondary" id="message" placeholder="Message"></textarea>
+                    </div>
+                    <div class="col-12 d-flex justify-content-end">
+                        <button type="submit" class="btn rounded-pill">Envoyer</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+{% endblock %}

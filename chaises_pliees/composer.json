@@ -1,0 +1,22 @@
+{
+    "name": "chaisepliee/chaisepliee",
+    "description": "Projet association chaises pliee avec MVC, doctrine et composer",
+    "autoload": {
+        "psr-4": {
+            "Chaisepliee\\Chaisepliee\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Groupe Jaune"
+        }
+    ],
+    "require": {
+        "doctrine/orm": "^2.11.0",
+        "doctrine/dbal": "^3.2",
+        "symfony/cache": "^5.4",
+        "twig/twig": "^3.8",
+        "doctrine/annotations": "^2.0"
+        
+    }
+}
