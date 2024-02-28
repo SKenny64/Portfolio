@@ -7,13 +7,13 @@ require_once "src/controller/PageController.php";
 require_once "src/entity/Utilisateur.php";
 require_once "src/entity/Categorie.php";
 require_once "src/entity/Page.php";
+
 use App\Entity\Utilisateur;
 use App\Entity\Categorie;
 use App\Entity\Page;
 use App\Controller\BaseController;
 use App\Controller\PageController;
 
-// index.php (suite)
 $route = $_GET['route'] ?? '';
 if (isset($_GET['id'])) {
     $id = intval($_GET['id']);
@@ -60,9 +60,9 @@ switch ($route) {
         echo $pageController->create();
         break;
     case "createRejoindre":
-            $pageController = new PageController($entityManager, $twig);
-            echo $pageController->createRejoindre(); 
-            break;
+        $pageController = new PageController($entityManager, $twig);
+        echo $pageController->createRejoindre(); 
+        break;
     case "createAccueil":
         $pageController = new PageController($entityManager, $twig);
         echo $pageController->createAccueil();

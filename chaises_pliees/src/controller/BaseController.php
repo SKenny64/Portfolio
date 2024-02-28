@@ -1,13 +1,9 @@
 <?php
 
-
-// src/Controller/BaseController.html
-
 namespace App\Controller;
 
 require_once __DIR__ . '/../../vendor/autoload.php';
 require_once "bootstrap.php";
-// require_once __DIR__ . "/../Entity/Exposition.php";
 
 use App\Entity\Utilisateur;
 use App\Entity\Page;
